@@ -36,5 +36,13 @@ app.get('/generate-presigned-url', async (req, res) => {
 });
 
 // Start the server
-const PORT = 4000;
-app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
+// Use the PORT provided by Render, or default to 4000
+const port = process.env.PORT || 4000;
+
+app.get('/', (req, res) => {
+  res.send('Hello World!');
+});
+
+app.listen(port, '0.0.0.0', () => {
+  console.log(`Server is running on port ${port}`);
+});
