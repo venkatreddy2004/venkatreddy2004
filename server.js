@@ -1,4 +1,3 @@
-import { S3Client, PutObjectCommand } from "@aws-sdk/client-s3";
 
 require('dotenv').config();
 const express = require('express');
